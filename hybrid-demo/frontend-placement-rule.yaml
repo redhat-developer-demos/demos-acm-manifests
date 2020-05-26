@@ -1,14 +1,14 @@
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
-  name: frontend-clusters
-  namespace: gitops-hybrid-demo
+   name: frontend-dev-clusters
+   namespace: gitops-hybrid-demo
 spec:
-  clusterConditions:
-   - type: OK
-  clusterSelector:
-    matchExpressions: []
-    matchLabels:
-      env: "dev"
-      tier: "frontend"
-  clusterReplicas: 1
+   clusterConditions:
+      - type: OK
+   clusterSelector:
+      matchExpressions: []
+      matchLabels:
+         environment: "dev"
+         tier: "frontend"
+   clusterReplicas: 1
