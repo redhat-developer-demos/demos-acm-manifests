@@ -1,0 +1,7 @@
+= Demos ACM Manifests
+
+This repository holds all the demo ACM manifests
+
+== Manifests folders
+
+./hybrid-demo[Hybrid Demo]
