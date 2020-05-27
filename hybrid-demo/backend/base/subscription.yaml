@@ -1,0 +1,15 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: Subscription
+metadata:
+   name: backend-subscription
+   namespace: gitops-hybrid-demo
+   labels:
+      cloud: all
+   annotations:
+      apps.open-cluster-management.io/github-branch: acm
+spec:
+   channel: gitops-hybrid-demo/hybrid-demo-github
+   placement:
+      placementRef:
+         kind: PlacementRule
+         name: dev-clusters-backend

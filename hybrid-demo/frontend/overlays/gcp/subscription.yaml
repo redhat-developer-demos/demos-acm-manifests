@@ -1,0 +1,11 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: Subscription
+metadata:
+   name: hybrid-demo-front-subscription
+   labels:
+      cloud: Google
+spec:
+   placement:
+      placementRef:
+         kind: PlacementRule
+         name: frontend-dev-cluster-gcp

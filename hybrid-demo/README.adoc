@@ -1,0 +1,89 @@
+= Hybrid Cloud Demo
+
+This repository holds the ACM manifests for deploying https://github.com/redhat-developer-demos[hybrid-cloud] demo.
+
+== Create Demo Namespace and GitHub Channel
+
+[source,bash]
+----
+oc apply -f namespace .yaml \
+  -f github-channel.yaml
+----
+
+== Deploying Backend
+
+[source,bash]
+----
+cd $PROJECT_HOME/backend
+----
+
+===  Create Application
+
+Deploy the demo backend application:
+
+[source,bash]
+----
+oc apply -f application.yaml
+----
+
+Create the subscriptions and placement rules for the clusters managed by ACM:
+
+==== Amazon
+
+[source,bash]
+----
+oc apply --kustomize overlays/aws
+----
+
+==== Azure
+
+[source,bash]
+----
+oc apply --kustomize overlays/azr
+----
+
+==== Google
+
+[source,bash]
+----
+oc apply --kustomize overlays/gcp
+----
+
+== Deploying Frontend
+
+[source,bash]
+----
+cd $PROJECT_HOME/frontend
+----
+
+===  Create Application
+
+Deploy the demo frontend application:
+
+[source,bash]
+----
+oc apply -f application.yaml
+----
+
+Create the subscriptions and placement rules for the clusters managed by ACM and where the frontend application need to be deployed.
+
+==== Amazon
+
+[source,bash]
+----
+oc apply --kustomize overlays/aws
+----
+
+==== Azure
+
+[source,bash]
+----
+oc apply --kustomize overlays/azr
+----
+
+==== Google
+
+[source,bash]
+----
+oc apply --kustomize overlays/gcp
+----
