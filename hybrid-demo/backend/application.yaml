@@ -1,7 +1,7 @@
 apiVersion: app.k8s.io/v1beta1
 kind: Application
 metadata:
-   name: hybrid-cloud-aws-backend
+   name: hybrid-cloud-backend
    namespace: gitops-hybrid-demo
 spec:
    componentKinds:
@@ -14,3 +14,5 @@ spec:
            operator: In
            values:
               - Amazon
+              - Azure
+              - Google

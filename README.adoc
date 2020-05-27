@@ -1,7 +1,10 @@
 = Demos ACM Manifests
 
-This repository holds all the demo ACM manifests
+This repository holds all the RedHat Developer demos, https://www.redhat.com/en/technologies/management/advanced-cluster-management[Advanced Cluster Management for Kubernetes(ACM)]  manifests.
+
+== Deploying ACM
 
 == Manifests folders
 
-./hybrid-demo[Hybrid Demo]
+link:./hybrid-demo[Hybrid Demo]
+

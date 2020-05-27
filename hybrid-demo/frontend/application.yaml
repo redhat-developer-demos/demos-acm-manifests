@@ -13,4 +13,6 @@ spec:
          - key: app
            operator: In
            values:
-              - hybrid-cloud-frontend
+              - Amazon
+              - Azure
+              - Google

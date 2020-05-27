@@ -1,16 +1,15 @@
 apiVersion: apps.open-cluster-management.io/v1
 kind: Subscription
 metadata:
-   name: backend-azr-subscription
+   name: backend-subscription
    namespace: gitops-hybrid-demo
    labels:
-      cloud: Azure
+      cloud: all
    annotations:
-      apps.open-cluster-management.io/github-path: kubernetes/backend/azr
       apps.open-cluster-management.io/github-branch: acm
 spec:
    channel: gitops-hybrid-demo/hybrid-demo-github
    placement:
       placementRef:
          kind: PlacementRule
-         name: backend-azr-dev-clusters
+         name: dev-clusters-backend

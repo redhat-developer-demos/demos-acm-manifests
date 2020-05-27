@@ -1,7 +1,7 @@
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
-   name: backend-gcp-dev-clusters
+   name: frontend-dev-cluster
    namespace: gitops-hybrid-demo
 spec:
    clusterConditions:
@@ -10,5 +10,4 @@ spec:
       matchExpressions: []
       matchLabels:
          environment: "dev"
-         tier: "backend"
-         cloud: "Google"
+   clusterReplicas: 1

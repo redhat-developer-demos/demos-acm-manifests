@@ -1,0 +1,13 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: Subscription
+metadata:
+   name: backend-subscription
+   labels:
+      cloud: Azure
+   annotations:
+      apps.open-cluster-management.io/github-path: backend/overlays/azr
+spec:
+   placement:
+      placementRef:
+         kind: PlacementRule
+         name: dev-clusters-backend-azr
