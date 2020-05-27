@@ -50,3 +50,40 @@ oc apply --kustomize overlays/gcp
 ----
 
 == Deploying Frontend
+
+[source,bash]
+----
+cd $PROJECT_HOME/frontend
+----
+
+===  Create Application
+
+Deploy the demo frontend application:
+
+[source,bash]
+----
+oc apply -f application.yaml
+----
+
+Create the subscriptions and placement rules for the clusters managed by ACM and where the frontend application need to be deployed.
+
+==== Amazon
+
+[source,bash]
+----
+oc apply --kustomize overlays/aws
+----
+
+==== Azure
+
+[source,bash]
+----
+oc apply --kustomize overlays/azr
+----
+
+==== Google
+
+[source,bash]
+----
+oc apply --kustomize overlays/gcp
+----
