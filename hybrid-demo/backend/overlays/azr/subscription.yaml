@@ -1,7 +1,7 @@
 apiVersion: apps.open-cluster-management.io/v1
 kind: Subscription
 metadata:
-   name: backend-subscription
+   name: hybrid-demo-backend-subscription
    labels:
       cloud: Azure
    annotations:

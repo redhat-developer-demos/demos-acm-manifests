@@ -2,12 +2,14 @@
 
 This repository holds the ACM manifests for deploying https://github.com/redhat-developer-demos[hybrid-cloud] demo.
 
-== Create Demo Namespace and GitHub Channel
+== Create Demo Namespace, GitHub Channel and hybrid-cloud Application
 
 [source,bash]
 ----
-oc apply -f namespace .yaml \
-  -f github-channel.yaml
+cd $PROJECT_HOME/hybrid-demo
+oc apply -f namespace.yaml \
+  -f github-channel.yaml \
+  -f application.yaml
 ----
 
 == Deploying Backend
@@ -16,16 +18,6 @@ oc apply -f namespace .yaml \
 ----
 cd $PROJECT_HOME/backend
 ----
-
-===  Create Application
-
-Deploy the demo backend application:
-
-[source,bash]
-----
-oc apply -f application.yaml
-----
-
 Create the subscriptions and placement rules for the clusters managed by ACM:
 
 ==== Amazon
@@ -49,6 +41,12 @@ oc apply --kustomize overlays/azr
 oc apply --kustomize overlays/gcp
 ----
 
+NOTE: It will take few minutes for the deployments to be propogated to the clusters.
+
+A successfull deployment will be as shown in the screenshot below:
+
+image::../assets/images/backend_topology.png[]
+
 == Deploying Frontend
 
 [source,bash]
@@ -56,14 +54,6 @@ oc apply --kustomize overlays/gcp
 cd $PROJECT_HOME/frontend
 ----
 
-===  Create Application
-
-Deploy the demo frontend application:
-
-[source,bash]
-----
-oc apply -f application.yaml
-----
 
 Create the subscriptions and placement rules for the clusters managed by ACM and where the frontend application need to be deployed.
 
@@ -87,3 +77,8 @@ oc apply --kustomize overlays/azr
 ----
 oc apply --kustomize overlays/gcp
 ----
+
+As with backend deployment it will take some time for the changes to be propogated to the cluster.
+With a successfull deployment your application view should look like:
+
+image::../assets/images/frontend_backend_topology.png[]

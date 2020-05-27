@@ -1,7 +1,7 @@
 apiVersion: app.k8s.io/v1beta1
 kind: Application
 metadata:
-   name: hybrid-cloud-frontend
+   name: hybrid-cloud
    namespace: gitops-hybrid-demo
 spec:
    componentKinds:
@@ -10,7 +10,7 @@ spec:
    descriptor: {}
    selector:
       matchExpressions:
-         - key: app
+         - key: cloud
            operator: In
            values:
               - Amazon
