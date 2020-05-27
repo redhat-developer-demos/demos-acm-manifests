@@ -5,4 +5,4 @@ metadata:
    namespace: gitops-hybrid-demo
 spec:
    type: GitHub
-   pathname: https://github.com/kameshsampath/hybrid-cloud.git
+   pathname: https://github.com/redhat-developer-demos/hybrid-cloud.git
