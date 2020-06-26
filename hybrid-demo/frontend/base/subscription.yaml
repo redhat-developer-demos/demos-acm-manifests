@@ -2,7 +2,6 @@ apiVersion: apps.open-cluster-management.io/v1
 kind: Subscription
 metadata:
    name: hybrid-demo-frontend-subscription
-   namespace: gitops-hybrid-demo
    labels:
       cloud: all
    annotations:

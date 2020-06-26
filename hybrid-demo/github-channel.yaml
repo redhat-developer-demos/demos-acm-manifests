@@ -2,7 +2,6 @@ apiVersion: apps.open-cluster-management.io/v1
 kind: Channel
 metadata:
    name: hybrid-demo-github
-   namespace: gitops-hybrid-demo
 spec:
    type: GitHub
    pathname: https://github.com/redhat-developer-demos/hybrid-cloud.git

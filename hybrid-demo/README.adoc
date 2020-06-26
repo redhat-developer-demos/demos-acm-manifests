@@ -7,9 +7,7 @@ This repository holds the ACM manifests for deploying https://github.com/redhat-
 [source,bash]
 ----
 cd $PROJECT_HOME/hybrid-demo
-oc apply -f namespace.yaml \
-  -f github-channel.yaml \
-  -f application.yaml
+oc apply -k $PWD
 ----
 
 == Deploying Backend
