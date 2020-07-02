@@ -52,7 +52,7 @@ Login to the OpenShift using `oc` CLI as OpenShift cluster-admin.
 [source,bash]
 ----
 oc apply -n open-cluster-management \
-  -- multiclusterhub.yaml
+  -- hub/multiclusterhub.yaml
 ----
 
 Wait for all the Multi Cluster Hub pods to be up and running. There will be a total of 35 pods tha need to be running. The followig screen shot shows a successful MultiCluster Hub deployment
