@@ -2,7 +2,29 @@
 
 This repository holds all the RedHat Developer demos, https://www.redhat.com/en/technologies/management/advanced-cluster-management[Advanced Cluster Management for Kubernetes(ACM)]  manifests.
 
+== Pre-requsites
+
+* You need to have a https://quay.io[Quay.io] account
+* Set the environment variable $QUAYIO_USERNAME to your Quay.io username
+* Set the environment variable $QUAYIO_USER_PASSWORD to your Quay.io user password 
+
 == Deploying ACM
+
+Create OpenShift project where ACM will be deployed:
+
+[source,bash]
+----
+oc new-project open-cluster-management
+----
+
+Create a the image pull secret using the command:
+
+[source,bash]
+----
+oc -n open-cluster-management create secret docker-registry advanced-cluster-management-registry \
+  --docker-server=registry.access.redhat.com/rhacm1-tech-preview \
+  --docker-username="$QUAYIO_USERNAME" --docker-password="$QUAYIO_USER_PASSWORD"
+----
 
 The ACM can be deployed on any OpenShift cluster using the OperatorHub console,
 
@@ -44,6 +66,11 @@ image::assets/images/acm_mch_route.png[]
 Add new or import existing OpenShift clusters into the hub using the Multi Cluster Hub console:
 
 image::assets/images/acm_add_import_cluster.png[]
+
+[NOTE]
+====
+If you prefer CLI install, then you can use the script $PROJECT_HOME/bin/acm_install.sh
+====
 
 == Manifests folders
 

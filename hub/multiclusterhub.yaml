@@ -2,5 +2,5 @@ apiVersion: operators.open-cluster-management.io/v1beta1
 kind: MultiClusterHub
 metadata:
    name: multiclusterhub
-   namespace: open-cluster-management
-spec: {}
+spec:
+   imagePullSecret: advanced-cluster-management-registry
